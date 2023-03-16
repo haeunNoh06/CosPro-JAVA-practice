@@ -13,6 +13,7 @@ public class Population {
 				room = i;
 			}
 		}
+		
 		return group[room];
 	}
 
