@@ -1,4 +1,4 @@
-package level1;
+package part1;
 import java.util.Scanner;
 import java.util.Arrays;
 

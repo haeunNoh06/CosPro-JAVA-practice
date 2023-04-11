@@ -1,4 +1,4 @@
-package level2;
+package part2;
 
 public class CandF {
     public int solution(int value, String unit) {
