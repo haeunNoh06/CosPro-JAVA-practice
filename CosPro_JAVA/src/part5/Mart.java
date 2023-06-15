@@ -14,7 +14,7 @@ class Mart {
            if(stuffs[i] > 3)
                generalCounter += stuffs[i];
            else
-               smallCounter += stuffs[i];
+               smallCounter += stuffs[i]*0.7;
        }
 
        if(smallCounter > generalCounter)
