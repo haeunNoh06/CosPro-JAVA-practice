@@ -4,43 +4,25 @@ import java.util.Arrays;
 
 public class ShirtSize {
 
-	public static int[] solution(String[] shirtSize) {
-		
-		int[] sizeCnt = {0,0,0,0,0,0};
-		
-		for ( int i = 0; i < shirtSize.length; i++ ) {
-			
-			if ( shirtSize[i].equals("XS"))
-				sizeCnt[0]++;
-			else if ( shirtSize[i].equals("S"))
-				sizeCnt[1]++;
-			else if ( shirtSize[i].equals("M"))
-				sizeCnt[2]++;
-			else if ( shirtSize[i].equals("L"))
-				sizeCnt[3]++;
-			else if ( shirtSize[i].equals("XL"))
-				sizeCnt[4]++;
-			else if ( shirtSize[i].equals("XXL"))
-				sizeCnt[5]++;
-		}
-		
-		return sizeCnt;
-	}
+    public int[] solution(String[] shirtSize) {
+        String[] answer = {"XS", "S", "M", "L", "XL", "XXL"};
+				int[] cnt = new int[answer.length];
+				for ( int i = 0; i < answer.length; i++) {
+					for ( int j = 0; j < shirtSize.length; j++) {
+						if ( answer[i].equals(shirtSize[j])) {
+							cnt[i]++;
+						}
+					}
+				}
+        return cnt;
+    }
 	
-	public static void main(String[] args) {
-		
-		Scanner scan = new Scanner(System.in);
-		
-		System.out.print("학생 수 입력 : ");
-		int studentCnt = scan.nextInt();
-		String[] shirtSize = new String[studentCnt];
-		
-		for (int i = 0; i < shirtSize.length; i++) {
-			shirtSize[i] = scan.next();
-		}
-		
-		System.out.println("Solution: return value of the method is "
-		+Arrays.toString(solution(shirtSize)));
-	}
+    public static void main(String[] args) {
+        ShirtSize sol = new ShirtSize();
+        String[] shirtSize = {"XS", "S", "L", "L", "XL", "S"};
+        int[] ret = sol.solution(shirtSize);
+ 
+        System.out.println("solution 메소드의 반환 값은 " + Arrays.toString(ret) + " 입니다.");
+    }
 
 }
